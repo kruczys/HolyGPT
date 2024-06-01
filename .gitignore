@@ -1,2 +1,6 @@
 .venv/
+bible_model
 PS.pdf
+cached*
+bible_pol*
+results

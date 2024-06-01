@@ -4,10 +4,13 @@ def clean_text(text):
     text = re.sub(r'[,.!?;:"\'”\-]', '', text)
     
     lines = text.split('\n')
-    cleaned_lines = [line for line in lines if not re.search(r'\d+$', line)]
+    cleaned_lines = []
+    for line in lines:
+        if not re.search(r'\d+$', line):
+            cleaned_lines.append(line)
+    
     cleaned_text = '\n'.join(cleaned_lines)
     cleaned_text = re.sub(r'PISMOSW\s*\d+\s*BETA.*?\(\w+@\w+\.\w+\)', '', cleaned_text, flags=re.DOTALL)
-    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
     
     return cleaned_text
 
