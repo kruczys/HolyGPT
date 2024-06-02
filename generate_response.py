@@ -1,20 +1,18 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-# Wczytanie wytrenowanego modelu i tokenizera
 model = GPT2LMHeadModel.from_pretrained("./bible_model")
 tokenizer = GPT2Tokenizer.from_pretrained("./bible_model")
 
-# Funkcja do generowania odpowiedzi na podstawie promptu użytkownika
 def generate_response(prompt):
     inputs = tokenizer(prompt, return_tensors="pt")
     outputs = model.generate(
         inputs["input_ids"],
         attention_mask=inputs["attention_mask"],  # Dodanie maski uwagi
-        max_length=224,  # Maksymalna długość wygenerowanego tekstu
+        max_length=200,  # Maksymalna długość wygenerowanego tekstu
         num_return_sequences=1,  # Liczba generowanych sekwencji
-        temperature=0.6,  # Parametr kontrolujący "kreatywność" generowania
-        top_k=40,  # Liczba tokenów, spośród których model wybiera kolejne słowo
-        top_p=0.95,  # Probabilistyczne cięcie (nucleus sampling)
+        temperature=0.5,  # Parametr kontrolujący "kreatywność" generowania
+        top_k=30,  # Liczba tokenów, spośród których model wybiera kolejne słowo
+        top_p=0.99,  # Probabilistyczne cięcie (nucleus sampling)
         repetition_penalty=1.3,  # Kara za powtarzanie tych samych fraz
         do_sample=True,  # Umożliwia losowe próbowanie
         pad_token_id=tokenizer.eos_token_id  # Ustawienie pad_token_id na eos_token_id

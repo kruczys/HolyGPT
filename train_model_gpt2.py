@@ -15,7 +15,7 @@ model_name = "distilgpt2"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name)
 
-dataset = load_dataset("bible_pol_cleaned.txt", tokenizer)
+dataset = load_dataset("bible_ready_1.txt", tokenizer)
 
 data_collator = DataCollatorForLanguageModeling(
     tokenizer=tokenizer,
@@ -25,10 +25,11 @@ data_collator = DataCollatorForLanguageModeling(
 training_args = TrainingArguments(
     output_dir="./results",
     overwrite_output_dir=True,
-    num_train_epochs=1,
+    num_train_epochs=3,
     per_device_train_batch_size=1,
     save_steps=10_000,
     save_total_limit=2,
+    learning_rate=5e-5,
 )
 
 trainer = Trainer(

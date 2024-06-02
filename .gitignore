@@ -1,6 +1,6 @@
 .venv/
-bible_model
-PS.pdf
+bible_model*
+*.pdf
 cached*
 bible_pol*
 results
