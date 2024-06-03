@@ -30,9 +30,14 @@ def home():
 @app.route("/chat", methods=["POST"])
 def response():
     data = request.get_json()
-    user_input = data["message"]
-    response = generate_response(user_input)
-    return jsonify({"message": response})
+    user_input = data['message']
+    temp = float(data.get('temperature', 0.5))
+    top_k = int(data.get('top_k', 30))
+    top_p = float(data.get('top_p', 0.99))
+    repetition_penalty = float(data.get('repetition_penalty', 1.3))
+    response_text = generate_response(user_input, temp, top_k, top_p, repetition_penalty)
+    print(temp, top_k, top_p, repetition_penalty)
+    return jsonify({"message": response_text})
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)

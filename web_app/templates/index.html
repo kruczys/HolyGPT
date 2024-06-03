@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Bible AI</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="static/css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Welcome to my site :)</h1>
+
+<head>
+    <title>Bible AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/style.css" rel="stylesheet">
+    <script src="static/scripts/chat.js"></script>
+</head>
+
+<body>
+    <h1>Welcome to my site :)</h1>
+    <div id="user_panel">
         <input type="text" id="user_input" placeholder="Type something..."></input>
+
+        <div>
+            <label for="temperature">Temperature:</label>
+            <input type="range" id="temperature" name="temperature" min="0.1" max="1.0" step="0.05" value="0.5">
+            <span id="temp_value">0.5</span>
+        </div>
+        <div>
+            <label for="top_k">Top K:</label>
+            <input type="range" id="top_k" name="top_k" min="1" max="100" step="1" value="30">
+            <span id="top_k_value">30</span>
+        </div>
+        <div>
+            <label for="top_p">Top P:</label>
+            <input type="range" id="top_p" name="top_p" min="0.1" max="1.0" step="0.01" value="0.99">
+            <span id="top_p_value">0.99</span>
+        </div>
+        <div>
+            <label for="repetition_penalty">Repetition Penalty:</label>
+            <input type="range" id="repetition_penalty" name="repetition_penalty" min="1.0" max="2.0" step="0.1"
+                value="1.3">
+            <span id="rep_penalty_value">1.3</span>
+        </div>
         <button onclick="sendMessage()">Send</button>
         <button onclick="clearChat()">Clear</button>
-        <div id="chat"></div>
-        <script src="static/scripts/chat.js"></script>
-    </body>
+        <script>
+            document.getElementById('temperature').oninput = function () {
+                document.getElementById('temp_value').innerHTML = this.value;
+            }
+            document.getElementById('top_k').oninput = function () {
+                document.getElementById('top_k_value').innerHTML = this.value;
+            }
+            document.getElementById('top_p').oninput = function () {
+                document.getElementById('top_p_value').innerHTML = this.value;
+            }
+            document.getElementById('repetition_penalty').oninput = function () {
+                document.getElementById('rep_penalty_value').innerHTML = this.value;
+            }
+        </script>
+    </div>
+    <div id="chat"></div>
+</body>
+
 </html>
