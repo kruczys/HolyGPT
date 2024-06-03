@@ -7,15 +7,15 @@ def generate_response(prompt):
     inputs = tokenizer(prompt, return_tensors="pt")
     outputs = model.generate(
         inputs["input_ids"],
-        attention_mask=inputs["attention_mask"],  # Dodanie maski uwagi
-        max_length=200,  # Maksymalna długość wygenerowanego tekstu
-        num_return_sequences=1,  # Liczba generowanych sekwencji
-        temperature=0.5,  # Parametr kontrolujący "kreatywność" generowania
-        top_k=30,  # Liczba tokenów, spośród których model wybiera kolejne słowo
-        top_p=0.99,  # Probabilistyczne cięcie (nucleus sampling)
-        repetition_penalty=1.3,  # Kara za powtarzanie tych samych fraz
-        do_sample=True,  # Umożliwia losowe próbowanie
-        pad_token_id=tokenizer.eos_token_id  # Ustawienie pad_token_id na eos_token_id
+        attention_mask=inputs["attention_mask"],
+        max_length=200,
+        num_return_sequences=1,
+        temperature=0.5,
+        top_k=30,
+        top_p=0.99,
+        repetition_penalty=1.3,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id
     )
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return generated_text

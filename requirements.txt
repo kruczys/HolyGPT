@@ -2,3 +2,4 @@ ctransformers
 transformers
 datasets
 torch
+flask
