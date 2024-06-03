@@ -6,12 +6,12 @@ app = Flask(__name__)
 model = GPT2LMHeadModel.from_pretrained("../bible_model")
 tokenizer = GPT2Tokenizer.from_pretrained("../bible_model")
 
-def generate_response(prompt, temp=0.5, top_k=30, top_p=0.99, repetition_penalty=1.3):
+def generate_response(prompt, max_tokens=100, temp=0.5, top_k=30, top_p=0.99, repetition_penalty=1.3):
     inputs = tokenizer(prompt, return_tensors="pt")
     outputs = model.generate(
         inputs["input_ids"],
         attention_mask=inputs["attention_mask"],
-        max_length=200,
+        max_length=max_tokens,
         num_return_sequences=1,
         temperature=temp,
         top_k=top_k,
@@ -35,8 +35,9 @@ def response():
     top_k = int(data.get('top_k', 30))
     top_p = float(data.get('top_p', 0.99))
     repetition_penalty = float(data.get('repetition_penalty', 1.3))
-    response_text = generate_response(user_input, temp, top_k, top_p, repetition_penalty)
-    print(temp, top_k, top_p, repetition_penalty)
+    max_tokens = int(data.get('max_tokens', 100))
+    response_text = generate_response(user_input, max_tokens, temp, top_k, top_p, repetition_penalty)
+    print(max_tokens, temp, top_k, top_p, repetition_penalty)
     return jsonify({"message": response_text})
 
 if __name__ == "__main__":

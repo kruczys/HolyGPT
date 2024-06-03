@@ -1,0 +1,74 @@
+body {
+    background-color: #55FFFF;
+    color: #55FFFF;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+h1 {
+    color: #FFFF55;
+    margin-top: 20px;
+    font-size: 69px;
+}
+
+#user_panel {
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    margin: 20px auto;
+    width: 50%;
+    background-color: #00AAAA;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    color: #AA0000;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+}
+
+label {
+    color: #FFFF00;
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input[type="range"] {
+    width: 60%;
+    margin: 5px 0;
+}
+
+span {
+    color: #FF00FF;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #55FFFF;
+    color: #AA0000;
+    border: 1px solid #FFFFFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #FF00FF;
+    color: #FFFF55;
+}
+
+#chat {
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    margin: 20px auto;
+    width: 50%;
+    height: 200px;
+    background-color: #FFFFFF;
+    overflow-y: scroll;
+    color: #AA0000;
+}
