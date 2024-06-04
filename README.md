@@ -6,6 +6,8 @@ This project is an AI 🚀🚀🚀 chat web application based on distilgpt2 mode
 - [Docker](https://www.docker.com/)
 
 ## Instalation and usage
+It's an 8GB download.
+
 ```sh
 docker run -dp 5000:5000 kkreczko/holygpt:v1
 ```
