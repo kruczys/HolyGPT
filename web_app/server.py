@@ -3,8 +3,8 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = Flask(__name__)
 
-model = GPT2LMHeadModel.from_pretrained("../bible_model")
-tokenizer = GPT2Tokenizer.from_pretrained("../bible_model")
+model = GPT2LMHeadModel.from_pretrained("./bible_model")
+tokenizer = GPT2Tokenizer.from_pretrained("./bible_model")
 
 def generate_response(prompt, max_tokens=100, temp=0.5, top_k=30, top_p=0.99, repetition_penalty=1.3):
     inputs = tokenizer(prompt, return_tensors="pt")
@@ -41,6 +41,6 @@ def response():
     return jsonify({"message": response_text})
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 

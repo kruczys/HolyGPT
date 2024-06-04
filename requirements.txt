@@ -1,5 +1,3 @@
-ctransformers
 transformers
-datasets
-torch
 flask
+torch
