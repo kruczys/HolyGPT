@@ -26,4 +26,4 @@ Note: This is an 8GB download.
 - [Docker](https://www.docker.com/) - A cool tool that's always nice to work with. 🐳
 - [Google Colab](https://colab.research.google.com/) - An excellent application that helped me fine-tune my model and accelerate the whole process. 🔥
 
-Feel free to explore, tweak the settings, and experience the unique blend of technology and scripture with HolyGPT. Enjoy! If you have any questions and suggestions feel free to contact me: konradkreczko@gmail.com
+Feel free to explore, tweak the settings, and experience the unique blend of technology and scripture with HolyGPT. Enjoy! If you have any questions and suggestions you're welcome to contact me: konradkreczko@gmail.com
