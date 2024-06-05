@@ -11,7 +11,7 @@ It's an 8GB download.
 ```sh
 docker run -dp 5000:5000 kkreczko/holygpt:v1
 ```
-After dowload and start is finished use this link to access website: (http://localhost:5000/)
+After dowload and start is finished use this link to access website: http://localhost:5000/
 
 # Acknowledgments
 [distilgpt2 model](https://huggingface.co/distilbert/distilgpt2) - great model that works well on my not so powerful machines 🤟
