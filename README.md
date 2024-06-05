@@ -1,6 +1,6 @@
 # HolyGPT
 
-HolyGPT is an AI 🚀🚀🚀 chat web application based on the distilgpt2 model, designed to finish text inputted by the user in the style of the Polish Bible. Users can also adjust model settings such as temperature or top_k values. The style of this project was heavily inspired by the unique TempleOS created by the late Terry A. Davis. In TempleOS, users could generate pseudo-random "word from God" messages; HolyGPT aims to emulate this, but with less randomness and more focus on the Biblical style.
+HolyGPT is an AI powered (🚀🚀🚀) chat web application based on the distilgpt2 model, designed to finish text inputted by the user in the style of the Polish Bible. Users can also adjust model settings such as temperature or top_k values. The style of this project was heavily inspired by the unique TempleOS created by the late Terry A. Davis. In TempleOS, users could generate pseudo-random "word from God" messages; HolyGPT aims to emulate this, but with less randomness and more focus on the Biblical style.
 
 ## Setup
 
